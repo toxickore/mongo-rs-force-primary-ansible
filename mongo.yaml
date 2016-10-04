@@ -8,3 +8,28 @@
     apt: name=mongodb-clients state=latest
   - name: Install mongodb
     apt: name=mongodb state=latest
+  - name: Install docker
+    apt: name=docker.io state=latest
+  
+  - name: Create working directory
+    file: path=/home/emerson/mongo-replica state=directory mode=0755
+  
+  - name: Create arbiter.js
+    template: src=arbiter.js
+          dest=/home/emerson/mongo-replica/arbiter.js
+
+  - name: Create docker-entrypoint.sh
+    template: src=docker-entrypoint.sh
+          dest=/home/emerson/mongo-replica/docker-entrypoint.sh
+
+  - name: Create primary.js
+    template: src=primary.js
+              dest=/home/emerson/mongo-replica/primary.js
+  
+  - name: Create start_rs.js
+    template: src=start_rs.js
+              dest=/home/emerson/mongo-replica/start_rs.js
+  
+  - name: Create start.sh
+    template: src=start.sh
+              dest=/home/emerson/mongo-replica/start.sh
