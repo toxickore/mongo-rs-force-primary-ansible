@@ -16,11 +16,12 @@
 
   - name: Create arbiter.js
     template: src=arbiter.js
-          dest=/home/emerson/mongo-replica/arbiter.js
+              dest=/home/emerson/mongo-replica/arbiter.js
 
   - name: Create docker-entrypoint.sh
     template: src=docker-entrypoint.sh
-          dest=/home/emerson/mongo-replica/docker-entrypoint.sh
+              dest=/home/emerson/mongo-replica/docker-entrypoint.sh
+              mode=u+x
 
   - name: Create primary.js
     template: src=primary.js
