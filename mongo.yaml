@@ -13,7 +13,7 @@
   
   - name: Create working directory
     file: path=/home/emerson/mongo-replica state=directory mode=0755
-  
+
   - name: Create arbiter.js
     template: src=arbiter.js
           dest=/home/emerson/mongo-replica/arbiter.js
@@ -33,3 +33,7 @@
   - name: Create start.sh
     template: src=start.sh
               dest=/home/emerson/mongo-replica/start.sh
+
+  - name: Create Dockerfile
+    template: src=Dockerfile
+              dest=/home/emerson/mongo-replica/Dockerfile
