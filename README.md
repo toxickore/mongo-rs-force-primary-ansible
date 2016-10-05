@@ -10,6 +10,6 @@ Requirements:
 How to use
 * $ git clone https://github.com/toxickore/mongo-rs-force-primary-ansible.git
 * copy the hosts file to /etc/ansible/hosts and edit with the proper IP address for the target
-* Create a user ID named 'emerson' on both inventory server and target host
+* Create a user ID named 'emerson' on both inventory server and target host or edit the paths on the mongo.yaml file with your user ID
 * Run ansible-playbook mongo.yaml --become --ask-become-pass
 * Once the playbook is applied to the target host run: bash start.sh from the mongo-replica folder
